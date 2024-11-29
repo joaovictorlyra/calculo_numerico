@@ -16,14 +16,15 @@ def trapezios(f, a, b, n):
 
 def simpson_composto(f, a, b, n):
     if n % 2 != 0:
-        print("A quantidade de subintervalos não pode ser ímpar.")
-    h = (b - a) / n
-    soma = f(a) + f(b)
-    for i in range(1, n, 2):
-        soma += 4 * f(a + i * h)
-    for i in range(2, n, 2):
-        soma += 2 * f(a + i * h)
-    return (h / 3) * soma
+        return "A quantidade de subintervalos não pode ser ímpar."
+    else:
+        h = (b - a) / n
+        soma = f(a) + f(b)
+        for i in range(1, n, 2):
+            soma += 4 * f(a + i * h)
+        for i in range(2, n, 2):
+            soma += 2 * f(a + i * h)
+        return (h / 3) * soma
 
 a = 0
 b = 2
